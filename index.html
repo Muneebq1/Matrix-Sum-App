@@ -9,33 +9,28 @@
 </head>
 
 <body>
-    <h1>Matrix Sum App</h1>
-    <form onsubmit="submit">
-        <input type="number" id="input_1">
-        <input type="number" id="input_2">
-        <button>START</button>
-        
-<br><br>    
- <table onclick="start2()">
-    <tr>
-        <td><input type="number" id="v1"></td>
-        <td><input type="number" id="v2"></td>
-    </tr>
-    <br><br>
-    <tr>
-        <td><input type="number" id="v3"></td>
-        <td><input type="number" id="v4"></td>
-    </tr>
-</table>       
-        <script>
-
- if(input1 = "2"){
-  function start2(){
-    
- }
-
-        </script>
+    <h1>Matrix Addition</h1>
+    <p>Enter matrix table size</p>
+    <form class="form1" onclick="start(); return false">
+        <h2>Rows:</h2>
+        <input type="number" id="row_size" required>
+        <h2>Column: </h2>
+        <input type="number" id="col_size" required>
+        <button type="submit">Start</button>
     </form>
+    <br><br><BR></BR>
+    <form onclick="sum(); return false" class="form2">
+        <div id="input_1"></div>
+        <div id="input_2"></div>
+        <button type="submit">SUM</button><br><br>
+    </form>
+    
+    <br><br>
+    
+    <div id="result"></div>
+    
+        <script src="app.js"></script>
+        
 </body>
 
 </html>
