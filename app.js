@@ -36,7 +36,7 @@ function start() {
         }
         input1.innerHTML += `<br>`;
         input2.innerHTML += `<br>`;
-        mResult.innerHTML += `<br>`;jvgcjfc8iy
+        mResult.innerHTML += `<br>`;
         
 
 
