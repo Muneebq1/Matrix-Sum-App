@@ -45,19 +45,86 @@ function start() {
 }
 
 
-function sum() {
+// function sum() {
 
-    for (let i = 0; i < row; i++) {
-        for (let j = 0; j < col; j++) {
-            console.log("running");
+//     for (let i = 0; i < row; i++) {
+//         for (let j = 0; j < col; j++) {
+//             console.log("running");
 
-            document.querySelector(`#mResult-${i}-${j}`).value =
-                +document.querySelector(`#m1-${i}-${j}`).value
-                +
-                +document.querySelector(`#m2-${i}-${j}`).value;
+//             document.querySelector(`#mResult-${i}-${j}`).value =
+//                 +document.querySelector(`#m1-${i}-${j}`).value
+//                 +
+//                 +document.querySelector(`#m2-${i}-${j}`).value;
+//         }
+//     }
+
+
+
+    function sum() {
+
+        let sum1 = [];
+        let sum2 = [];
+
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < col; j++) {
+                console.log("running");
+                if (sum1[i] === undefined) sum1[i] = []
+                if (sum2[i] === undefined) sum2[i] = []
+
+                sum1[i][j] = +document.querySelector(`#m1-${i}-${j}`).value
+                sum2[i][j] = +document.querySelector(`#m2-${i}-${j}`).value
+            }
+        }
+
+        let result = sumMatrix(sum1, sum2);
+
+
+        for (let i = 0; i < result.length; i++) {
+            for (let j = 0; j < result[i].length; j++) {
+                document.querySelector(`#mResult-${i}-${j}`).value = result[i][j];
+            }
         }
     }
 
 
-}
+    function sumMatrix(sum1, sum2) {
+        let result = [];
+        for (let i = 0; i < sum1.length; i++) {
+            result[i] = [];
+            for (let j = 0; j < sum1[i].length; j++) {
+                result[i][j] = sum1[i][j] + sum2[i][j];
+            }
+        }
+        return result;
+    }
+    function subtract() {
+        let sub1 = []
+        let sub2 = []
 
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < col; j++) {
+                console.log('running')
+                if (sub1[i] === undefined) sub1[i] = []
+                if (sub2[i] === undefined) sub2[i] = []
+
+                sub1[i][j] = +document.querySelector(`#m1-${i}-${j}`).value
+                sub2[i][j] = +document.querySelector(`#m2-${i}-${j}`).value
+            }
+        }
+        let result = subtractMatrix(sub1, sub2)
+        for (let i = 0; i < result.length; i++) {
+            for (let j = 0; j < result[i].length; j++) {
+                document.querySelector(`#mResult-${i}-${j}`).value = result[i][j]
+            }
+        }
+    }
+    function subtractMatrix(sub1, sub2) {
+        let result = []
+        for (let i = 0; i < sub1.length; i++) {
+            result[i] = []
+            for (let j = 0; j < sub1[i].length; j++) {
+                result[i][j] = sub1[i][j] - sub2[i][j]
+            }
+        }
+        return result
+    }
