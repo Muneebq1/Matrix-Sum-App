@@ -129,6 +129,42 @@ function start() {
         return result
     }
 
+    function multiplication() {
 
+        let mul1 = [];
+        let mul2 = [];
+
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < col; j++) {
+               
+                if (mul1[i] === undefined) mul1[i] = []
+                if (mul2[i] === undefined) mul2[i] = []
+
+                mul1[i][j] = +document.querySelector(`#m1-${i}-${j}`).value
+                mul2[i][j] = +document.querySelector(`#m2-${i}-${j}`).value
+            }
+        }
+
+        let result = multiplicationMatrix(mul1, mul2);
+
+
+        for (let i = 0; i < result.length; i++) {
+            for (let j = 0; j < result[i].length; j++) {
+                document.querySelector(`#mResult-${i}-${j}`).value = result[i][j];
+            }
+        }
+    }
+
+
+    function multiplicationMatrix(mul1, mul2) {
+        let result = [];
+        for (let i = 0; i < mul1.length; i++) {
+            result[i] = [];
+            for (let j = 0; j < mul1[i].length; j++) {
+                result[i][j] = mul1[i][j] * mul2[i][j];
+            }
+        }
+        return result;
+    }
 
     
