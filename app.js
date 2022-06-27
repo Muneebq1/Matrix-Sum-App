@@ -67,7 +67,7 @@ function start() {
 
         for (let i = 0; i < row; i++) {
             for (let j = 0; j < col; j++) {
-                console.log("running");
+               
                 if (sum1[i] === undefined) sum1[i] = []
                 if (sum2[i] === undefined) sum2[i] = []
 
@@ -103,7 +103,7 @@ function start() {
 
         for (let i = 0; i < row; i++) {
             for (let j = 0; j < col; j++) {
-                console.log('running')
+                
                 if (sub1[i] === undefined) sub1[i] = []
                 if (sub2[i] === undefined) sub2[i] = []
 
@@ -128,3 +128,7 @@ function start() {
         }
         return result
     }
+
+
+
+    
