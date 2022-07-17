@@ -24,15 +24,18 @@
 <br>
 <br>
 <form onsubmit="sum(); return false" class="hidden" id="form2">
-
-        <div id="input_1" class="page"></div>  + , - , *
+    <select id="drop_down" required>
+        <option value="+" id="op1">+</option>
+        <option value="-" id="op2">-</option>
+        <option value="x" id="op3">x</option>
+    </select>
+        <div id="input_1" class="page"></div>  
         <div id="input_2" class="page"></div> 
         <div id="mResult" class="page"></div>
-        <br>
-        <br>
-        <button type="button" onclick="sum()" >SUM</button>
+        <button type="submit">submit</button>
+        <!-- <button type="button" onclick="sum()" >SUM</button>
         <button type="button" onclick="subtract()" >SUBTRACT</button>
-        <button type="button" onclick="multiplication()">MULTIPLY</button>
+        <button type="button" onclick="multiplication()">MULTIPLY</button> -->
 
 
     </form>

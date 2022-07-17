@@ -69,16 +69,98 @@ function sum() {
     for (let i = 0; i < row; i++) {
         for (let j = 0; j < col; j++) {
 
+<<<<<<< HEAD
+                sum1[i][j] = +document.querySelector(`#m1-${i}-${j}`).value
+                sum2[i][j] = +document.querySelector(`#m2-${i}-${j}`).value
+            }
+        }
+        let select = document.getElementById('drop_down')
+        let value = select.options[select.selectedIndex].value
+
+        let result // Initiating global variable for Sum, Sub & Multiplication Matrices 
+
+        // Initiating conditional statement for Sum, Sub & Multiplication
+            if (value == "+") {
+                result = sumMatrix(sum1, sum2) // Condition for Addition
+            }
+            else if (value == "-") {
+                result = subtractMatrix(sum1, sum2) // Condition for Subtraction 
+            }
+            else if (value == "x") {
+                result = mulMatrix(sum1, sum2) // Condition for Multiplication
+            }
+          
+        for (let i = 0; i < result.length; i++) {
+            for (let j = 0; j < result[i].length; j++) {
+                document.querySelector(`#mResult-${i}-${j}`).value = result[i][j];
+            }
+=======
             if (sum1[i] === undefined) sum1[i] = []
             if (sum2[i] === undefined) sum2[i] = []
 
             sum1[i][j] = +document.querySelector(`#m1-${i}-${j}`).value
             sum2[i][j] = +document.querySelector(`#m2-${i}-${j}`).value
+>>>>>>> daadadf78c573e9ecb6cce4a44e0592a35010ec1
         }
     }
 
     let result = sumMatrix(sum1, sum2);
 
+<<<<<<< HEAD
+    function sumMatrix(sum1, sum2) {
+        let result = [];
+        for (let i = 0; i < sum1.length; i++) {
+            result[i] = [];
+            for (let j = 0; j < sum1[i].length; j++) {
+                result[i][j] = sum1[i][j] + sum2[i][j];
+            }
+        }
+        return result;
+    }
+    // function subtract() {
+    //     let sub1 = []
+    //     let sub2 = []
+
+    //     for (let i = 0; i < row; i++) {
+    //         for (let j = 0; j < col; j++) {
+                
+    //             if (sub1[i] === undefined) sub1[i] = []
+    //             if (sub2[i] === undefined) sub2[i] = []
+
+    //             sub1[i][j] = +document.querySelector(`#m1-${i}-${j}`).value
+    //             sub2[i][j] = +document.querySelector(`#m2-${i}-${j}`).value
+    //         }
+    //     }
+    //     let result = subtractMatrix(sub1, sub2)
+    //     for (let i = 0; i < result.length; i++) {
+    //         for (let j = 0; j < result[i].length; j++) {
+    //             document.querySelector(`#mResult-${i}-${j}`).value = result[i][j]
+    //         }
+    //     }
+    // }
+    function subtractMatrix(sum1, sum2) {
+        let result = []
+        for (let i = 0; i < sum1.length; i++) {
+            result[i] = []
+            for (let j = 0; j < sum1[i].length; j++) {
+                result[i][j] = sum1[i][j] - sum2[i][j]
+            }
+        }
+        return result
+    }
+    function mulMatrix(sum1, sum2) {
+        let aNumRows = sum1.length, aNumCols = sum1[0].length,
+            bNumRows = sum2.length, bNumCols = sum2[0].length,
+            result = new Array(aNumRows);  // initialize array of rows
+        for (let r = 0; r < aNumRows; ++r) {
+            result[r] = new Array(bNumCols); // initialize the current row
+            for (let c = 0; c < bNumCols; ++c) {
+                result[r][c] = 0             // initialize the current cell
+                for (let i = 0; i < aNumCols; ++i) {
+                    result[r][c] += sum1[r][i] * sum2[i][c] // Realtime Multiplication between Matrices
+                }
+            }
+=======
 
     for (let i = 0; i < result.length; i++) {
         for (let j = 0; j < result[i].length; j++) {
@@ -143,6 +225,7 @@ function multiplication() {
 
             mul1[i][j] = +document.querySelector(`#m1-${i}-${j}`).value
             mul2[i][j] = +document.querySelector(`#m2-${i}-${j}`).value
+>>>>>>> daadadf78c573e9ecb6cce4a44e0592a35010ec1
         }
     }
 
